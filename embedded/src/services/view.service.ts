@@ -2,8 +2,8 @@ import { query, queryOne, execute } from "../db/connection.js";
 import { NotFoundError, ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
 import { parseJsonColumn } from "../utils/json.js";
-import { DEFAULT_VIEW_CONFIG } from "@skeleton-database/shared";
-import type { View, ViewConfig, CreateViewInput, UpdateViewInput } from "@skeleton-database/shared";
+import { DEFAULT_VIEW_CONFIG } from "../constants.js";
+import type { View, ViewConfig, CreateViewInput, UpdateViewInput } from "../types/database.js";
 
 function parseView(raw: Record<string, unknown>): View {
   return {

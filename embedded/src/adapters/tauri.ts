@@ -32,7 +32,7 @@ export class TauriSqlAdapter implements DatabaseAdapter {
   }
 
   async close(): Promise<void> {
-    await this.db.close();
+    await this.db.close() as unknown;
   }
 }
 
@@ -44,7 +44,7 @@ interface TauriDatabase {
   execute(
     sql: string,
     params?: unknown[]
-  ): Promise<{ rowsAffected: number; lastInsertId: number }>;
+  ): Promise<{ rowsAffected: number; lastInsertId?: number }>;
   select<T>(sql: string, params?: unknown[]): Promise<T>;
-  close(): Promise<void>;
+  close(): Promise<unknown>;
 }

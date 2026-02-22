@@ -9,7 +9,7 @@ export { TauriSqlAdapter } from "./adapters/tauri.js";
 export { BetterSqlite3Adapter } from "./adapters/better-sqlite3.js";
 export { SqlJsAdapter } from "./adapters/sql-js.js";
 
-// ---- Types (re-exported from shared) ----
+// ---- Types ----
 export type {
   Base,
   Table,
@@ -45,9 +45,9 @@ export type {
   RowExport,
   ViewExport,
   CsvImportResult,
-} from "@skeleton-database/shared";
+} from "./types/index.js";
 
-// ---- Constants (re-exported from shared) ----
+// ---- Constants ----
 export {
   SKELETON_VERSION,
   INTEROP_VERSION,
@@ -61,7 +61,7 @@ export {
   DEFAULT_VIEW_CONFIG,
   ROWS_PER_PAGE,
   MAX_ROWS_PER_PAGE,
-} from "@skeleton-database/shared";
+} from "./constants.js";
 
 // ---- Errors ----
 export { AppError, NotFoundError, ValidationError, ConflictError } from "./errors.js";

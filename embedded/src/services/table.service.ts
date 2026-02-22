@@ -1,8 +1,8 @@
 import { query, queryOne, execute } from "../db/connection.js";
 import { NotFoundError, ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
-import { DEFAULT_STATUS_OPTIONS, DEFAULT_VIEW_CONFIG } from "@skeleton-database/shared";
-import type { Table, CreateTableInput, UpdateTableInput } from "@skeleton-database/shared";
+import { DEFAULT_STATUS_OPTIONS, DEFAULT_VIEW_CONFIG } from "../constants.js";
+import type { Table, CreateTableInput, UpdateTableInput } from "../types/database.js";
 
 export async function listTables(baseId: string): Promise<Table[]> {
   return query<Table>(

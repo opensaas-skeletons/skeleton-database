@@ -33,9 +33,6 @@
     "test:watch": "vitest",
     "clean": "rm -rf dist"
   },
-  "dependencies": {
-    "@skeleton-database/shared": "*"
-  },
   "peerDependencies": {
     "@tauri-apps/plugin-sql": ">=2.0.0",
     "better-sqlite3": ">=9.0.0"

@@ -1,8 +1,8 @@
 import { query, queryOne, execute } from "../db/connection.js";
 import { NotFoundError, ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
-import { DEFAULT_STATUS_OPTIONS, DEFAULT_VIEW_CONFIG } from "@skeleton-database/shared";
-import type { Base, CreateBaseInput, UpdateBaseInput } from "@skeleton-database/shared";
+import { DEFAULT_STATUS_OPTIONS, DEFAULT_VIEW_CONFIG } from "../constants.js";
+import type { Base, CreateBaseInput, UpdateBaseInput } from "../types/database.js";
 
 export async function listBases(): Promise<Base[]> {
   return query<Base>("SELECT * FROM bases ORDER BY created_at DESC");

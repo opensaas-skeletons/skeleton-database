@@ -2,7 +2,7 @@ import { query, queryOne, execute } from "../db/connection.js";
 import { NotFoundError, ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
 import { parseJsonColumn } from "../utils/json.js";
-import { ROWS_PER_PAGE, MAX_ROWS_PER_PAGE } from "@skeleton-database/shared";
+import { ROWS_PER_PAGE, MAX_ROWS_PER_PAGE } from "../constants.js";
 import type {
   Row,
   Field,
@@ -13,7 +13,7 @@ import type {
   FilterCondition,
   SortCondition,
   PaginatedResponse,
-} from "@skeleton-database/shared";
+} from "../types/database.js";
 
 function parseRow(raw: Record<string, unknown>): Row {
   return {

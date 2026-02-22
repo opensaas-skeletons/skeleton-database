@@ -2,8 +2,8 @@ import { query, queryOne, execute } from "../db/connection.js";
 import { NotFoundError, ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
 import { parseJsonColumn, parseBoolean } from "../utils/json.js";
-import { FIELD_TYPES } from "@skeleton-database/shared";
-import type { Field, CreateFieldInput, UpdateFieldInput } from "@skeleton-database/shared";
+import { FIELD_TYPES } from "../constants.js";
+import type { Field, CreateFieldInput, UpdateFieldInput } from "../types/database.js";
 
 function parseField(raw: Record<string, unknown>): Field {
   return {

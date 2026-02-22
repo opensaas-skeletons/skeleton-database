@@ -2,7 +2,7 @@ import { query, execute } from "../db/connection.js";
 import { ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
 import { parseJsonColumn, parseBoolean } from "../utils/json.js";
-import { APP_NAME, INTEROP_VERSION, DEFAULT_VIEW_CONFIG } from "@skeleton-database/shared";
+import { APP_NAME, INTEROP_VERSION, DEFAULT_VIEW_CONFIG } from "../constants.js";
 import type {
   Base,
   Table,
@@ -16,7 +16,7 @@ import type {
   RowExport,
   ViewExport,
   FieldType,
-} from "@skeleton-database/shared";
+} from "../types/database.js";
 
 export async function exportBase(baseId: string): Promise<DatabaseExportPayload> {
   const bases = await query<Base>("SELECT * FROM bases WHERE id = ?", [baseId]);

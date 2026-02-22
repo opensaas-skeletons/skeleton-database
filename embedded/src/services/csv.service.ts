@@ -2,7 +2,7 @@ import { query, execute } from "../db/connection.js";
 import { ValidationError } from "../errors.js";
 import { generateId } from "../utils/uuid.js";
 import { parseJsonColumn } from "../utils/json.js";
-import type { Field, CsvImportResult, FieldType } from "@skeleton-database/shared";
+import type { Field, CsvImportResult, FieldType } from "../types/database.js";
 
 export async function importCsv(
   tableId: string,
