@@ -1,0 +1,54 @@
+{
+  "name": "@skeleton-database/embedded",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Embedded SQLite variant — same types, same service API, direct function calls instead of REST",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tauri": {
+      "import": "./dist/adapters/tauri.js",
+      "types": "./dist/adapters/tauri.d.ts"
+    },
+    "./better-sqlite3": {
+      "import": "./dist/adapters/better-sqlite3.js",
+      "types": "./dist/adapters/better-sqlite3.d.ts"
+    },
+    "./sql-js": {
+      "import": "./dist/adapters/sql-js.js",
+      "types": "./dist/adapters/sql-js.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "@tauri-apps/plugin-sql": ">=2.0.0",
+    "better-sqlite3": ">=9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@tauri-apps/plugin-sql": {
+      "optional": true
+    },
+    "better-sqlite3": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "sql.js": "^1.11.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  }
+}
